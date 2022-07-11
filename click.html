@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Color changer</title>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript">
+        $(function() {
+            //Change cursor type
+            $("#id_text").css("cursor", "pointer");
+            //Assign event listener on click
+            $("#id_text").on("click", function() {
+                if($("#id_text").css("color") == "rgb(0, 0, 255)") {
+                    $("#id_text").css("color", "rgb(255, 0, 0)");
+                }    
+                else
+                    $("#id_text").css("color", "rgb(0, 0, 255)");
+            });
+        });
+        //console.log('hi!');
+        </script>
+    </head>
+    <body>
+        <p id="id_text">Text changes its colour</p>
+    </body>
+</html>
