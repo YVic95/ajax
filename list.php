@@ -9,12 +9,14 @@
         $(function(){
             $(".jumbotron > div > a").on("click", function(){
                 let url = "user.php?id=" + $(this).data('id');
-                console.log(url);
+                //console.log(this);
                 //AJAX-request and its result
                 $.ajax({
                     url: encodeURI(url)
                 }).done(function(data){
                     $('#info').html(data).removeClass("hidden");
+                }).fail(function() {
+                    console.log( "error" );
                 });
             });
         });
