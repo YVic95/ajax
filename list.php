@@ -23,7 +23,8 @@
         </script>  
     </head>
     <body>
-        <div id="list">
+        <div id="container">
+            <div id="list">
             <?php 
                 //Connection to the DB
                 require_once("connect.php");
@@ -33,15 +34,16 @@
                 try {
                     echo "<div class='jumbotron'>";
                     while($user = $usr->fetch()) {
-                        echo "<div><a href='#'"."data-id='".$user['id']."'>".htmlspecialchars($user['name'])."</a></div>";
+                        echo "<div><a class='link' href='#'"."data-id='".$user['id']."'>".htmlspecialchars($user['name'])."</a></div>";
                     }
                     echo "</div>";
                 } catch(PDOException $e) {
                     echo "Request error: " . $e->getMessage();
                 }
             ?>
+            </div>
+            <div id="info" class="hidden"></div>
         </div>
-        <div id="info" class="hidden"></div>
         
     </body>
 </html>
