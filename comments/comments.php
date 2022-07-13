@@ -19,10 +19,10 @@
                 $("#submit-id").prop("disabled", true);
                 //AJAX-request
                 $.ajax({
-                    url: "addcom.php",
+                    url: "addComment.php",
                     method: 'post',
                     data: {nickname: $("#nickname").val(),
-                           content: $("#nickname").val()}
+                           content: $("#content").val()}
                 }).done(function(data){
                     //Success request respond
                     $("#info").html(data);
@@ -34,7 +34,7 @@
     </head>
     <body>
         <div id="info">
-            <!--DON`T FORGET TO REQUIRE PHP FILE!-->
+            <?php require_once "addComment.php"?>
         </div>
         <div id='form'>
             <p>
